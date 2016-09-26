@@ -3,7 +3,7 @@ django-cms >= 3.0
 psycopg2
 six
 
-django-reversion
+django-reversion < 2.0
 django-filer
 cmsplugin-filer
 djangocms-markdown
