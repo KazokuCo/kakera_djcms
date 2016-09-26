@@ -1,0 +1,15 @@
+# local data
+/bin
+/include
+/lib
+/local
+*.pyc
+db.sqlite3
+
+# clutter files
+pyvenv.cfg
+pip-selfcheck.json
+
+# editor temporaries
+*.swp
+kakera.sublime-project
