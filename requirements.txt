@@ -7,3 +7,4 @@ django-reversion
 django-filer
 cmsplugin-filer
 djangocms-markdown
+djangocms-text-ckeditor

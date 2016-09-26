@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     'markdown_deux',
     'djangocms_markdown',
+    'djangocms_text_ckeditor',
 
     'django.contrib.admin',
     'django.contrib.auth',
