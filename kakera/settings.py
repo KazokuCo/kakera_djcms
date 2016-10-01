@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'sekizai',
     'reversion',
     'djangocms_admin_style',
+    'compressor',
 
     'easy_thumbnails',
     'filer',
@@ -89,6 +90,12 @@ MIDDLEWARE_CLASSES = [
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 ]
 
 ROOT_URLCONF = 'kakera.urls'
@@ -167,6 +174,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, "kakera", "static"),
+    os.path.join(BASE_DIR, "dist"),
+]
+
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -222,3 +234,9 @@ FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS = True
 CMS_TEMPLATES = [
     ('default.html', "Default"),
 ]
+
+
+# Django-Compressor
+# https://django-compressor.readthedocs.io/en/latest/settings/
+
+COMPRESS_CSS_HASHING_METHOD = 'content'

@@ -3,10 +3,13 @@
 /include
 /lib
 /local
+/share
 /static/*
 !/static/.gitkeep
 /media/*
 !/media/.gitkeep
+/node_modules
+/dist
 *.pyc
 db.sqlite3
 
