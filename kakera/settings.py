@@ -175,6 +175,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
 
 # Django-Filer
 # https://django-filer.readthedocs.io/en/latest/settings.html
@@ -188,6 +190,30 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+FILER_STORAGES = {
+    'public': {
+        'main': {
+            'ENGINE': DEFAULT_FILE_STORAGE,
+            'OPTIONS': {
+                'location': MEDIA_ROOT,
+                'base_url': MEDIA_URL,
+            },
+            'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
+            'UPLOAD_TO_PREFIX': '',
+        },
+        'thumbnails': {
+            'ENGINE': DEFAULT_FILE_STORAGE,
+            'THUMBNAIL_OPTIONS': {
+                'base_dir': 'thumbs',
+            },
+        },
+    },
+}
+
+FILER_CANONICAL_URL = 'permalink/'
+
+FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS = True
 
 
 # Django CMS
