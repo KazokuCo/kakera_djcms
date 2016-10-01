@@ -8,3 +8,5 @@ django-filer
 cmsplugin-filer
 djangocms-markdown
 djangocms-text-ckeditor
+
+aldryn-newsblog
