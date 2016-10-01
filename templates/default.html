@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load cms_tags %}
 
-{% block content %}
-  {% placeholder content %}
+{% block base %}
+  <div class="container">
+    {% block content %}
+    {% placeholder content %}
+    {% endblock %}
+  </div>
 {% endblock %}

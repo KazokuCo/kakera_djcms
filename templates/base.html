@@ -10,7 +10,9 @@
 </head>
 <body>
   {% cms_toolbar %}
-  {% block content %}{% endblock %}
+  {% block base %}
+  {% block content %}{% placeholder content %}{% endblock %}
+  {% endblock %}
   {% render_block "js" postprocessor "compressor.contrib.sekizai.compress" %}
 </body>
 </html>
