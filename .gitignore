@@ -9,7 +9,7 @@
 /media/*
 !/media/.gitkeep
 /node_modules
-/dist
+/build
 *.pyc
 db.sqlite3
 
