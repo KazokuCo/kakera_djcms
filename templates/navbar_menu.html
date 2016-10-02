@@ -1,6 +1,6 @@
 {% load menu_tags %}
 {% for child in children %}
-<li class="pure-menu-item{% if child.selected %} pure-menu-selected{% endif %}{% if child.children %} pure-menu-has-children pure-menu-allow-hover{% endif %}">
+<li class="pure-menu-item{% if child.selected or child.ancestor %} pure-menu-selected{% endif %}{% if child.children %} pure-menu-has-children pure-menu-allow-hover{% endif %}">
   <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" class="pure-menu-link">{{ child.get_menu_title }}</a>
   {% if child.children %}
   <ul class="pure-menu-children">

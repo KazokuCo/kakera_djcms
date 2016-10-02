@@ -8,10 +8,10 @@
     a {
         color: #ccc;
         text-decoration: none;
+    }
 
-        &:hover {
-            color: #333;
-            background-color: #ccc;
-        }
+    a:hover, .pure-menu-selected a {
+        color: #333;
+        background-color: #ccc;
     }
 }
