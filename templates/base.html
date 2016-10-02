@@ -3,8 +3,10 @@
 <html>
 <head>
   <title>{% page_attribute "page_title" %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   {% render_block "css" postprocessor "compressor.contrib.sekizai.compress" %}
   {% addtoblock "css" %}
+  <link rel="stylesheet" type="text/css" href="/static/css/vendor.css" />
   <link rel="stylesheet" type="text/css" href="/static/css/app.css" />
   {% endaddtoblock %}
 </head>
@@ -14,5 +16,9 @@
   {% block content %}{% placeholder content %}{% endblock %}
   {% endblock %}
   {% render_block "js" postprocessor "compressor.contrib.sekizai.compress" %}
+  {% addtoblock "js" %}
+  <script type="text/javascript" src="/static/js/vendor.js"></script>
+  <script type="text/javascript" src="/static/js/app.js"></script>
+  {% endaddtoblock %}
 </body>
 </html>

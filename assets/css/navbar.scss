@@ -1,0 +1,17 @@
+#navbar {
+    background-color: #333;
+
+    .pure-menu-children {
+        background-color: #333;
+    }
+
+    a {
+        color: #ccc;
+        text-decoration: none;
+
+        &:hover {
+            color: #333;
+            background-color: #ccc;
+        }
+    }
+}
