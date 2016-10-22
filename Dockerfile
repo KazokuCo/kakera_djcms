@@ -14,9 +14,8 @@ WORKDIR /srv/kakera
 ADD . .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN npm install && npm install -g gulp-cli && gulp
-RUN ./manage.py collectstatic --noinput
 
 # Run it under gunicorn.
 ENV GUNICORN_WORKERS 1
 EXPOSE 8000
-CMD ["/bin/bash", "-c", "/usr/local/bin/gunicorn -b 0.0.0.0:8000 -w ${GUNICORN_WORKERS} kakera.wsgi"]
+CMD ["/bin/bash", "-c", "./manage.py collectstatic --noinput && ./manage.py migrate && /usr/local/bin/gunicorn -b 0.0.0.0:8000 -w ${GUNICORN_WORKERS} kakera.wsgi"]
