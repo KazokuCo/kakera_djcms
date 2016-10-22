@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir gunicorn
 WORKDIR /srv/kakera
 ADD . .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN npm install && npm install -g gulp-cli && gulp
+RUN npm install && npm install -g gulp-cli && gulp && npm prune --production
 
 # Run it under gunicorn.
 ENV GUNICORN_WORKERS 1
